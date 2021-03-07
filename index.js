@@ -1,11 +1,15 @@
 const express = require('express');
 const dbConnect = require('./config/db');
+const cors = require('cors');
 
 // Creating the server
 const app = express();
 
 // Connect to the DataBase
 dbConnect();
+
+// Allow cors
+app.use( cors() );
 
 // Allow express.json
 app.use(express.json({ extended: true }));
